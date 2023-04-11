@@ -27,14 +27,24 @@ func main() {
 	// var firstNumber = 2
 	// var secondNumber = 5
 	// var subtraction = 7
+	// var answer int
+
+	// rand generates a number between 0 and whatever is passed as a parameter
+	// we add 2 to it because we want the number used to be at least 2, and
+	// no greater than 10 (multiplying by 1 makes the game a bit silly)
 	var firstNumber = rand.Intn(8) + 2
 	var secondNumber = rand.Intn(8) + 2
 	var subtraction = rand.Intn(8) + 2
-	var answer int
+	var answer = firstNumber*secondNumber - subtraction
 
+	playTheGame(firstNumber, secondNumber, subtraction, answer)
+}
+
+func playTheGame(firstNumber, secondNumber, subtraction, answer int) {
+	// create our reader variable, which reads input from standard in (the keyboard)
 	reader := bufio.NewReader(os.Stdin)
-	// display a welcome/instructions
 
+	// display a welcome/instructions
 	fmt.Println("Guess the Number Gamne")
 	fmt.Println("------------------------------")
 	fmt.Println("")
